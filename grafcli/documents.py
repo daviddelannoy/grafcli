@@ -97,9 +97,10 @@ class Dashboard(Document):
     def _load(self, source):
         self._source = source
 
-        self._rows = []
-        for row in source['rows']:
-            self._add_row(row)
+        # rows removed in V6
+        # self._rows = []
+        # for row in source['rows']:
+        #     self._add_row(row)
 
     def update(self, document):
         if isinstance(document, Dashboard):
@@ -162,7 +163,8 @@ class Dashboard(Document):
 
     @property
     def source(self):
-        self._source['rows'] = [row.source for row in self._rows]
+        # rows removed in V6
+        #self._source['rows'] = [row.source for row in self._rows]
         return self._source
 
 
